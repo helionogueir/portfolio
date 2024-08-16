@@ -1,0 +1,5 @@
+{
+  "viteDefines": {
+    "import.meta.env.APP_DEFAULT_CHARSET": "UTF-8"
+  }
+}
