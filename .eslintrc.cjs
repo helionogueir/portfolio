@@ -10,20 +10,21 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh'],
   rules: {
-    "quotes": ["error", "single", { "avoidEscape": true }],
-    "semi": ["error", "never", { "beforeStatementContinuationChars": "never"}],
-    "eol-last": ["error", "always"],
-    "no-restricted-imports": ["error", ".."],
-    "max-len": ["error", { code: 80 }],
+    'quotes': ['error', 'single', { 'avoidEscape': true }],
+    'semi': ['error', 'never', { 'beforeStatementContinuationChars': 'never'}],
+    'eol-last': ['error', 'always'],
+    'no-restricted-imports': ['error', '..'],
+    'max-len': ['error', { code: 80 }],
+    '@typescript-eslint/consistent-type-imports': 'error',
     'react-refresh/only-export-components': [
       'warn', { allowConstantExport: true },
     ],
-    "sort-imports": ["error", {
-      "ignoreCase": false,
-      "ignoreDeclarationSort": false,
-      "ignoreMemberSort": false,
-      "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
-      "allowSeparatedGroups": false
+    'sort-imports': ['error', {
+      'ignoreCase': false,
+      'ignoreDeclarationSort': false,
+      'ignoreMemberSort': false,
+      'memberSyntaxSortOrder': ['none', 'all', 'multiple', 'single'],
+      'allowSeparatedGroups': false
     }]
   },
 }

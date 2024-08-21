@@ -1,8 +1,8 @@
 import Header from '@app/components/Header'
-import i18next from '@app/domain/locales/i18next'
+import { useTranslation } from '@app/repositories/i18n/useTranslation'
 
 const HomeHeader = () => {
-  const { t } = i18next
+  const { t } = useTranslation()
   const title = t('common:app.title')
   const subtitle = t('common:app.subtitle')
 

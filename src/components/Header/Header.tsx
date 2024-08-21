@@ -1,26 +1,23 @@
 import { HeaderSubtitle, HeaderTitle, HeaderWrapper } from './Header.style'
 import type { HeaderProps } from './Header.d'
-import i18next from 'i18next'
+import { useDebug} from '@app/repositories/debug/useDebug'
+import { useDocumentTitle } from './helpers/useDocumentTitle'
 import { useEffect } from 'react'
 
 const Header = ({ title, subtitle }: HeaderProps) => {
+  const debug = useDebug()
+  const { changeDocumentTitle } = useDocumentTitle()
+
   useEffect(() => {
-    const appTitle = i18next.t('common:app.title')
-    const currentTitle = title === appTitle ? title : `${appTitle} | ${title}`
-    document.title = currentTitle
-    return () => console.info(`Unmount Header Title "${currentTitle}"`)
-  },[title])
+    const currentTitle = changeDocumentTitle(title)
+    return () =>
+        debug.info({ message: `Unmount Header Title "${currentTitle}"` })
+  },[debug, changeDocumentTitle, title])
 
   return (
     <HeaderWrapper>
       <HeaderTitle>{title}</HeaderTitle>
       <HeaderSubtitle>{subtitle}</HeaderSubtitle>
-      <h1>Header 1</h1>
-      <h2>Header 2</h2>
-      <h3>Header 3</h3>
-      <h4>Header 4</h4>
-      <h5>Header 5</h5>
-      <h6>Header 6</h6>
     </HeaderWrapper>
   )
 }

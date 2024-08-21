@@ -1,4 +1,5 @@
 import LanguageDetector from 'i18next-browser-languagedetector'
+import debug from '../console/console'
 import en from './en'
 import i18next from 'i18next'
 
@@ -11,8 +12,10 @@ i18next.use(LanguageDetector).init({
   defaultNS: 'common',
   ns: [ 'common' ],
 }, (err) => err
-  ? console.error('i18next', err)
-  : console.info(`Locale has already loaded successfully (${i18next.language})`)
+  ? debug.error(err)
+  : debug.info({
+    message: `Locale has already loaded successfully (${i18next.language})`
+  })
 )
 
 export default i18next
