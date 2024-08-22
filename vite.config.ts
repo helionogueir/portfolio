@@ -6,12 +6,9 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  resolve: {
-    /* Default Paths */
-    alias: {
-      '@app': '/src',
-    }
-  },
+  root: 'src',
+  build: { outDir: '../dist' },
+  resolve: { alias: { '@app': '' } },
   define: {
     ...Congigs.viteDefines,
     'import.meta.env.APP_NAME': JSON.stringify(i18next.t('common:app.title')),
