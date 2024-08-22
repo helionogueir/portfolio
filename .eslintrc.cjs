@@ -14,11 +14,16 @@ module.exports = {
     'semi': ['error', 'never', { 'beforeStatementContinuationChars': 'never'}],
     'eol-last': ['error', 'always'],
     'no-restricted-imports': ['error', '..'],
-    'max-len': ['error', { code: 80 }],
     '@typescript-eslint/consistent-type-imports': 'error',
+    "indent": ["error", 2],
     'react-refresh/only-export-components': [
       'warn', { allowConstantExport: true },
     ],
+    'max-len': ['error', { 
+      code: 80,
+      ignoreStrings: true,
+      ignoreComments: true
+    }],
     'sort-imports': ['error', {
       'ignoreCase': false,
       'ignoreDeclarationSort': false,

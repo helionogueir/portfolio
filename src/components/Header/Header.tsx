@@ -11,13 +11,13 @@ const Header = ({ title, subtitle }: HeaderProps) => {
   useEffect(() => {
     const currentTitle = changeDocumentTitle(title)
     return () =>
-        debug.info({ message: `Unmount Header Title "${currentTitle}"` })
+      debug.info({ message: `Unmount Header Title "${currentTitle}"` })
   },[debug, changeDocumentTitle, title])
 
   return (
     <HeaderWrapper>
       <HeaderTitle>{title}</HeaderTitle>
-      <HeaderSubtitle>{subtitle}</HeaderSubtitle>
+      {subtitle && (<HeaderSubtitle>{subtitle}</HeaderSubtitle>)}
     </HeaderWrapper>
   )
 }

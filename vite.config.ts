@@ -1,3 +1,5 @@
+/// <reference types="vitest/config" />
+
 import Congigs from './configs.json'
 import { defineConfig } from 'vite'
 import i18next from './src/domain/locales/i18next'
@@ -9,6 +11,10 @@ export default defineConfig({
   root: 'src',
   build: { outDir: '../dist' },
   resolve: { alias: { '@app': '' } },
+  test: {
+    environment: 'jsdom',
+    setupFiles: ['./src/configs/test/vitest.setup.ts'],
+  },
   define: {
     ...Congigs.viteDefines,
     'import.meta.env.APP_NAME': JSON.stringify(i18next.t('common:app.title')),

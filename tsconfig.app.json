@@ -7,6 +7,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "baseUrl": "./src",
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -23,13 +24,13 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     
-    /* Base Path */
-    "baseUrl": "./src",
-
-    /* Default Paths */
+    /* Paths */
     "paths": {
       "@app/*": ["*"]
-    }
+    },
+
+    /* Types */
+    "types": ["@testing-library/jest-dom"]
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules/**"]

@@ -1,5 +1,5 @@
 import LanguageDetector from 'i18next-browser-languagedetector'
-import debug from '../console/console'
+import debug from '../console/useConsole'
 import en from './en'
 import i18next from 'i18next'
 
