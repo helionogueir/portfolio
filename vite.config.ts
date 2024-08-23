@@ -1,6 +1,6 @@
 /// <reference types="vitest/config" />
 
-import Congigs from './configs.json'
+import configs from './configs.json'
 import { defineConfig } from 'vite'
 import i18next from './src/domain/locales/i18next'
 import react from '@vitejs/plugin-react'
@@ -21,8 +21,10 @@ export default defineConfig({
     setupFiles: ['./src/configs/test/vitest.setup.ts'],
   },
   define: {
-    ...Congigs.viteDefines,
+    'import.meta.env.APP_DEFAULT_CHARSET': JSON.stringify(
+      configs.APP_DEFAULT_CHARSET,
+    ),
+    'import.meta.env.APP_DEFAULT_LANG': JSON.stringify(i18next.language),
     'import.meta.env.APP_NAME': JSON.stringify(i18next.t('common:app.title')),
-    'import.meta.env.APP_DEFAULT_LANG': i18next.language,
   },
 })
