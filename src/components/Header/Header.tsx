@@ -10,6 +10,7 @@ const Header = ({ title, subtitle }: HeaderProps) => {
 
   useEffect(() => {
     const currentTitle = changeDocumentTitle(title)
+
     return () =>
       debug.info({ message: `Unmount Header Title "${currentTitle}"` })
   }, [debug, changeDocumentTitle, title])

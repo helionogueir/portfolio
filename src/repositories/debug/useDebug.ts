@@ -6,5 +6,6 @@ export const useDebug: DebugHookProps = () => {
   const info: LogProps = (data) => displayConosle.info(data)
   const warn: LogProps = (data) => displayConosle.warn(data)
   const error: LogProps = (data) => displayConosle.error(data)
+
   return { info, warn, error }
 }

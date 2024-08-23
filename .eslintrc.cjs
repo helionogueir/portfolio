@@ -17,6 +17,8 @@ module.exports = {
     'eol-last': ['error', 'always'],
     'no-restricted-imports': ['error', '..'],
     '@typescript-eslint/consistent-type-imports': 'error',
+    'newline-before-return': 'error',
+    'newline-after-var': ['error', 'always'],
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
