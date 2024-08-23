@@ -1,0 +1,23 @@
+{
+  "environment": "jsdom",
+  "setupFiles": ["./src/configs/test/vitest.setup.ts"],
+  "coverage": {
+    "all": true,
+    "ignoreEmptyLines": true,
+    "reportsDirectory": "../coverage",
+    "reporter": ["text", "json", "html"],
+    "thresholds": {
+      "statements": 100,
+      "functions": 100,
+      "branches": 100,
+      "lines": 100
+    },
+    "include": ["{components,repositories}/**/*.{js,jsx,ts,tsx}"],
+    "exclude": [
+      "**/*.test.{js,jsx,ts,tsx}",
+      "**/index.ts",
+      "**/*.d.ts",
+      "**/*.style.tsx"
+    ]
+  }
+}

@@ -9,7 +9,7 @@ const renderComponent = (props: HeaderProps) => {
   render(<Header {...props} />)
 }
 
-describe('Success tests', () => {
+describe('Should test components/Header', () => {
   test('Should render components/Header title', () => {
     const props: HeaderProps = { title: `${appTitle} | Header Title` }
 
