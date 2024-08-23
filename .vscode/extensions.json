@@ -1,6 +1,9 @@
 {
   "recommendations": [
     "dbaeumer.vscode-eslint",
-    "styled-components.vscode-styled-components",
+    "ecmel.vscode-html-css",
+    "esbenp.prettier-vscode",
+    "redhat.vscode-yaml",
+    "styled-components.vscode-styled-components"
   ]
 }

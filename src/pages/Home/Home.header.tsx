@@ -6,9 +6,7 @@ const HomeHeader = () => {
   const title = t('common:app.title')
   const subtitle = t('common:app.subtitle')
 
-  return (
-    <Header title={title} subtitle={subtitle}/>
-  )
+  return <Header title={title} subtitle={subtitle} />
 }
 
 export default HomeHeader

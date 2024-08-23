@@ -1,6 +1,6 @@
 import { HeaderSubtitle, HeaderTitle, HeaderWrapper } from './Header.style'
 import type { HeaderProps } from './Header.d'
-import { useDebug} from '@app/repositories/debug/useDebug'
+import { useDebug } from '@app/repositories/debug/useDebug'
 import { useDocumentTitle } from './helpers/useDocumentTitle'
 import { useEffect } from 'react'
 
@@ -12,12 +12,12 @@ const Header = ({ title, subtitle }: HeaderProps) => {
     const currentTitle = changeDocumentTitle(title)
     return () =>
       debug.info({ message: `Unmount Header Title "${currentTitle}"` })
-  },[debug, changeDocumentTitle, title])
+  }, [debug, changeDocumentTitle, title])
 
   return (
     <HeaderWrapper>
       <HeaderTitle>{title}</HeaderTitle>
-      {subtitle && (<HeaderSubtitle>{subtitle}</HeaderSubtitle>)}
+      {subtitle && <HeaderSubtitle>{subtitle}</HeaderSubtitle>}
     </HeaderWrapper>
   )
 }

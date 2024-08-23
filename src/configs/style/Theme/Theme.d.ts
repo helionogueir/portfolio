@@ -8,19 +8,19 @@ declare module 'styled-components' {
 }
 
 export type SizingProps = {
-  xxSmall: string;
-  xSmall: string;
-  small: string;
-  regular: string;
-  large: string;
-  xLarge: string;
-  xxLarge: string;
+  xxSmall: string
+  xSmall: string
+  small: string
+  regular: string
+  large: string
+  xLarge: string
+  xxLarge: string
 }
 
 export type WeightProps = {
-  thin: number;
-  light: number;
-  regular: number;
-  bold: number;
-  bolder: number;
+  thin: number
+  light: number
+  regular: number
+  bold: number
+  bolder: number
 }

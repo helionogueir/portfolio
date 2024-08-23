@@ -1,4 +1,3 @@
 # Configs
 
 Application configuration settings.
-

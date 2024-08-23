@@ -3,9 +3,8 @@ import { describe, expect, test } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import i18next from '@app/repositories/i18n/useTranslation'
 
-
 const renderComponent = (props: HeaderProps) => {
-  render(<Header { ...props } />)
+  render(<Header {...props} />)
 }
 
 describe('Success tests', () => {
@@ -22,7 +21,7 @@ describe('Success tests', () => {
     const appTitle = i18next.t('common:app.title')
     const props: HeaderProps = {
       title: `${appTitle} | Header Title`,
-      subtitle: 'Header Subtitle'
+      subtitle: 'Header Subtitle',
     }
 
     renderComponent(props)
@@ -30,7 +29,9 @@ describe('Success tests', () => {
     const titleComponent = screen.getByRole('heading', { name: props.title })
     expect(titleComponent).toBeInTheDocument()
 
-    const subTitleComponent = screen.getByRole('heading', { name: props.subtitle })
+    const subTitleComponent = screen.getByRole('heading', {
+      name: props.subtitle,
+    })
     expect(subTitleComponent).toBeInTheDocument()
   })
 

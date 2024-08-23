@@ -18,6 +18,6 @@ export default defineConfig({
   define: {
     ...Congigs.viteDefines,
     'import.meta.env.APP_NAME': JSON.stringify(i18next.t('common:app.title')),
-    'import.meta.env.APP_DEFAULT_LANG': i18next.language
-  }
+    'import.meta.env.APP_DEFAULT_LANG': i18next.language,
+  },
 })

@@ -1,9 +1,8 @@
-import type { 
+import type {
   ChangeDocumentTitleProps,
   DocumentTitleHookProps,
 } from './useDocumentTitle.d'
 import { useTranslation } from '@app/repositories/i18n/useTranslation'
-
 
 export const useDocumentTitle: DocumentTitleHookProps = () => {
   const { t } = useTranslation()
@@ -14,6 +13,6 @@ export const useDocumentTitle: DocumentTitleHookProps = () => {
     document.title = currentTitle
     return currentTitle
   }
-  
+
   return { changeDocumentTitle }
 }

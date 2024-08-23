@@ -1,11 +1,11 @@
 export type DataProps = {
-  message: string,
+  message: string
 }
 
 export type LogProps = (data: DataProps) => void
 
 export type DebugHookProps = () => {
-  info: LogProps,
-  warn: LogProps,
-  error: LogProps,
+  info: LogProps
+  warn: LogProps
+  error: LogProps
 }
