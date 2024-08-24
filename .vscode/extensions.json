@@ -4,6 +4,7 @@
     "ecmel.vscode-html-css",
     "esbenp.prettier-vscode",
     "redhat.vscode-yaml",
-    "styled-components.vscode-styled-components"
+    "styled-components.vscode-styled-components",
+    "unifiedjs.vscode-mdx"
   ]
 }

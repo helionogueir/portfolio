@@ -1,5 +1,6 @@
 import eslintPluginPrettier from 'eslint-plugin-prettier'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
+import eslintPluginStorybook from 'eslint-plugin-storybook'
 import globals from 'globals'
 import js from '@eslint/js'
 import reactHooks from 'eslint-plugin-react-hooks'
@@ -22,6 +23,7 @@ export default tseslint.config(
     plugins: {
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
+      storybook: eslintPluginStorybook,
       prettier: eslintPluginPrettier,
     },
     rules: {

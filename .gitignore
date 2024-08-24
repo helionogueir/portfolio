@@ -27,3 +27,7 @@ dist
 
 # Tests
 coverage
+
+# Docs
+*storybook.log
+storybook-static

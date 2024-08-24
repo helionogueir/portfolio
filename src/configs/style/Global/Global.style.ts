@@ -3,10 +3,10 @@ import RootStyles from './Root.style'
 import TitleStyles from './Title.style'
 import { createGlobalStyle } from 'styled-components'
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
   ${ResetStyles}
   ${RootStyles}
   ${TitleStyles}
 `
 
-export default GlobalStyle
+export default GlobalStyles
