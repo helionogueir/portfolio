@@ -1,4 +1,4 @@
-import type { PaletteProps } from './Theme.d'
+import type { PaletteProps } from './Palette.d'
 
 export const Palette: PaletteProps = {
   primary: '#9046cf',

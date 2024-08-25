@@ -5,7 +5,7 @@ export const HeaderWrapper = styled.header`
   justify-content: center;
   flex-direction: column;
   border-bottom: ${({ theme }) =>
-    `${theme.test} solid ${theme.palette.gray.level2}`};
+    `${theme.border.width.thin} solid ${theme.palette.gray.level2}`};
   padding: ${({ theme }) => theme.spacing.regular};
   width: calc(100vw - (${({ theme }) => theme.spacing.regular} * 2));
   max-height: 16rem;

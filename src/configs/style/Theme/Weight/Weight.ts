@@ -1,4 +1,4 @@
-import type { WeightProps } from './Theme.d'
+import type { WeightProps } from './Weight.d'
 
 const Weight: WeightProps = {
   thin: 100,

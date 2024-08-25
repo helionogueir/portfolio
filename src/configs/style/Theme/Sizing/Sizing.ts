@@ -1,4 +1,4 @@
-import type { SizingProps } from './Theme.d'
+import type { SizingProps } from './Sizing.d'
 
 const Sizing: SizingProps = {
   xxSmall: '1rem',

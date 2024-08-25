@@ -1,4 +1,4 @@
-import type { MediaScreenProps } from './Theme.d'
+import type { MediaScreenProps } from './MediaScreen.d'
 
 const MediaScreen: MediaScreenProps = {
   // <= 767px

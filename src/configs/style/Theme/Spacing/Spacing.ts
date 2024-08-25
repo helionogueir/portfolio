@@ -1,4 +1,4 @@
-import type { SpacingProps } from './Theme.d'
+import type { SpacingProps } from './Spacing.d'
 
 const Spacing: SpacingProps = {
   small: '1rem',

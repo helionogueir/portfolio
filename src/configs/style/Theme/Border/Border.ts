@@ -1,4 +1,4 @@
-import type { BorderProps } from './Theme.d'
+import type { BorderProps } from './Border.d'
 
 const Border: BorderProps = {
   width: {

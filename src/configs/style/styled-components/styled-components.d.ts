@@ -1,4 +1,4 @@
-import type { ThemeProps } from '../Theme/Theme'
+import type { ThemeProps } from '@app/configs/style/Theme/Theme.d'
 
 declare module 'styled-components' {
   // eslint-disable-next-line @typescript-eslint/no-empty-object-type

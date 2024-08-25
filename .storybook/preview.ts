@@ -1,5 +1,5 @@
 import GlobalStyles from '../src/configs/style/Global'
-import { LightMode } from '../src/configs/style/Theme'
+import { Light } from '../src/configs/style/Theme/Mode/Light'
 import type { Preview } from '@storybook/react'
 import { ThemeProvider } from 'styled-components'
 import { withThemeFromJSXProvider } from '@storybook/addon-themes'
@@ -17,7 +17,7 @@ const preview: Preview = {
     withThemeFromJSXProvider({
       GlobalStyles,
       Provider: ThemeProvider,
-      themes: { light: LightMode },
+      themes: { light: Light },
       defaultTheme: 'light',
     }),
   ],
