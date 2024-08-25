@@ -1,23 +1,18 @@
 import { describe, expect, test, vi } from 'vitest'
 import { TrucatesSize } from '../Text.enum'
+import { loremIpsumGenerator } from '../useTextGenerator'
 import { renderHook } from '@app/configs/test/testing-library/react'
 import { useTruncate } from './useTruncate'
 
 const mountHook = () => renderHook(() => useTruncate())
 
-const text = 'Lorem ipsum '
-
-const textGenerated = (length: number, value: string | undefined = '') => {
-  if (value.length >= length) return value.slice(0, length)
-
-  return textGenerated(length, `${value}${text}`)
-}
-
-describe('Should test repositories/debug/useTruncate', () => {
+describe('Should test repositories/Text/useTruncate', () => {
   test('Should return "text", after call trucateTextByLimit', () => {
     const { result } = mountHook()
     const trucateTextByLimitSpy = vi.spyOn(result.current, 'trucateTextByLimit')
-    const text = textGenerated(TrucatesSize.TRUNCATE_TITLE_DESCRIPTION_LIMIT)
+    const text = loremIpsumGenerator(
+      TrucatesSize.TRUNCATE_TITLE_DESCRIPTION_LIMIT,
+    )
     const value = result.current.trucateTextByLimit(
       text,
       TrucatesSize.TRUNCATE_TITLE_DESCRIPTION_LIMIT,
@@ -34,7 +29,7 @@ describe('Should test repositories/debug/useTruncate', () => {
   test('Should return "text...", after call trucateTextByLimit', () => {
     const { result } = mountHook()
     const trucateTextByLimitSpy = vi.spyOn(result.current, 'trucateTextByLimit')
-    const text = textGenerated(
+    const text = loremIpsumGenerator(
       TrucatesSize.TRUNCATE_TITLE_DESCRIPTION_LIMIT + 1,
     )
     const value = result.current.trucateTextByLimit(
@@ -47,6 +42,6 @@ describe('Should test repositories/debug/useTruncate', () => {
       text,
       TrucatesSize.TRUNCATE_TITLE_DESCRIPTION_LIMIT,
     )
-    expect(value).toBe(`${textGenerated(253)}...`)
+    expect(value).toBe(`${loremIpsumGenerator(253)}...`)
   })
 })

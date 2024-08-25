@@ -7,7 +7,7 @@ const appTitle = i18next.t('system:app.name')
 
 const mountHook = () => renderHook(() => usePageTitle())
 
-describe('Should test repositories/debug/usePageTitle', () => {
+describe('Should test repositories/Text/usePageTitle', () => {
   test('Should return "title", after call changeDocumentTitle function', () => {
     const { result } = mountHook()
     const changeDocumentTitleSpy = vi.spyOn(

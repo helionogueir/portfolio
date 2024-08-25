@@ -14,10 +14,11 @@
     },
     "include": ["{components,repositories}/**/*.{js,jsx,ts,tsx}"],
     "exclude": [
-      "**/*.test.{js,jsx,ts,tsx}",
-      "**/index.ts",
       "**/*.d.ts",
-      "**/*.style.tsx"
+      "**/*.stories.{js,jsx,ts,tsx}",
+      "**/*.style.tsx",
+      "**/*.test.{js,jsx,ts,tsx}",
+      "**/index.ts"
     ]
   }
 }

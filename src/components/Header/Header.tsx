@@ -8,8 +8,8 @@ import type { HeaderProps } from './Header.d'
 import { TrucatesSize } from '@app/repositories/Text'
 import { useDebug } from '@app/repositories/Debug/useDebug'
 import { useEffect } from 'react'
-import { usePageTitle } from '@app/repositories/Text/usePageTitle/usePageTitle'
-import { useTruncate } from '@app/repositories/Text/useTruncate/useTruncate'
+import { usePageTitle } from '@app/repositories/Text/usePageTitle'
+import { useTruncate } from '@app/repositories/Text/useTruncate'
 
 const Header = ({ title, subtitle }: HeaderProps) => {
   const debug = useDebug()

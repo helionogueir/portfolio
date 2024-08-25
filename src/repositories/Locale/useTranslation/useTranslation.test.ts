@@ -4,7 +4,7 @@ import { useTranslation } from './useTranslation'
 
 const mountHook = () => renderHook(() => useTranslation())
 
-describe('Should test repositories/debug/useTranslation', () => {
+describe('Should test repositories/Locale/useTranslation', () => {
   test('Should return "translation", after call t', () => {
     const { result } = mountHook()
     const tSpy = vi.spyOn(result.current, 't')
