@@ -1,15 +1,12 @@
-import GlobalStyles from '@app/configs/style/Global'
 import Home from '@app/pages/Home'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Theme from '@app/configs/style/Theme'
-import { ThemeProvider } from 'styled-components'
+import StyledComponentsProvider from './configs/style/styled-components/StyledComponentsProvider'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ThemeProvider theme={Theme}>
-      <GlobalStyles />
+    <StyledComponentsProvider>
       <Home />
-    </ThemeProvider>
+    </StyledComponentsProvider>
   </React.StrictMode>,
 )

@@ -10,8 +10,8 @@ i18next.use(LanguageDetector).init(
     fallbackLng: 'en',
     resources: { en },
     interpolation: { escapeValue: false },
-    defaultNS: 'common',
-    ns: ['common'],
+    defaultNS: 'system',
+    ns: ['common', 'home', 'system'],
   },
   (err) =>
     err

@@ -1,3 +1,8 @@
+import {
+  personalRulesConfig,
+  restrictDomainImportsConfig,
+  restrictRepositoriesImportsConfig,
+} from './src/configs/eslint/no-restricted-imports.js'
 import eslintPluginPrettier from 'eslint-plugin-prettier'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import eslintPluginStorybook from 'eslint-plugin-storybook'
@@ -7,7 +12,7 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
 
-export default tseslint.config(
+const defautConfig = tseslint.config(
   { ignores: ['dist'] },
   {
     extends: [
@@ -32,24 +37,13 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
-      quotes: ['error', 'single', { avoidEscape: true }],
-      semi: ['error', 'never', { beforeStatementContinuationChars: 'never' }],
-      'prettier/prettier': 'error',
-      'eol-last': ['error', 'always'],
-      'no-restricted-imports': ['error', '..'],
-      '@typescript-eslint/consistent-type-imports': 'error',
-      'newline-before-return': 'error',
-      'newline-after-var': ['error', 'always'],
-      'sort-imports': [
-        'error',
-        {
-          ignoreCase: false,
-          ignoreDeclarationSort: false,
-          ignoreMemberSort: false,
-          memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
-          allowSeparatedGroups: false,
-        },
-      ],
     },
   },
 )
+
+export default [
+  ...defautConfig,
+  ...personalRulesConfig,
+  ...restrictDomainImportsConfig,
+  ...restrictRepositoriesImportsConfig,
+]

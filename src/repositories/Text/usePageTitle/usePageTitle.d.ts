@@ -1,5 +1,5 @@
 export type ChangeDocumentTitleProps = (title: string) => string
 
-export type DocumentTitleHookProps = () => {
+export type PageTitleHookProps = () => {
   changeDocumentTitle: ChangeDocumentTitleProps
 }

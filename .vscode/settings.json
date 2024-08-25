@@ -4,6 +4,9 @@
   "editor.detectIndentation": true,
   "editor.autoIndent": "full",
   "editor.indentSize": "tabSize",
+  "prettier.trailingComma": "none",
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },

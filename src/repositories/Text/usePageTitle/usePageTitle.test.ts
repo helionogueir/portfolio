@@ -1,13 +1,15 @@
 import { describe, expect, test, vi } from 'vitest'
-import i18next from '@app/repositories/i18n/useTranslation'
-import { renderHook } from '@testing-library/react'
-import { useDocumentTitle } from './useDocumentTitle'
+import i18next from '@app/repositories/Locale/useTranslation'
+import { renderHook } from '@app/configs/test/testing-library/react'
+import { usePageTitle } from './usePageTitle'
 
-const appTitle = i18next.t('common:app.title')
+const appTitle = i18next.t('system:app.name')
 
-describe('Should test repositories/debug/useDocumentTitle', () => {
-  test('Should execute changeDocumentTitle function', () => {
-    const { result } = renderHook(() => useDocumentTitle())
+const mountHook = () => renderHook(() => usePageTitle())
+
+describe('Should test repositories/debug/usePageTitle', () => {
+  test('Should return "title", after call changeDocumentTitle function', () => {
+    const { result } = mountHook()
     const changeDocumentTitleSpy = vi.spyOn(
       result.current,
       'changeDocumentTitle',
@@ -21,8 +23,8 @@ describe('Should test repositories/debug/useDocumentTitle', () => {
     expect(value).toBe(`${appTitle} | ${title}`)
   })
 
-  test('Should execute changeDocumentTitle function, where the title is iguals the app name', () => {
-    const { result } = renderHook(() => useDocumentTitle())
+  test('Should "title and app name" be iguals, after call changeDocumentTitle', () => {
+    const { result } = mountHook()
     const changeDocumentTitleSpy = vi.spyOn(
       result.current,
       'changeDocumentTitle',
@@ -35,8 +37,8 @@ describe('Should test repositories/debug/useDocumentTitle', () => {
     expect(value).toBe(appTitle)
   })
 
-  test('Should execute changeDocumentTitle function, where the title is empty', () => {
-    const { result } = renderHook(() => useDocumentTitle())
+  test('Should return "app name", after call changeDocumentTitle with "title" iguals empty', () => {
+    const { result } = mountHook()
     const changeDocumentTitleSpy = vi.spyOn(
       result.current,
       'changeDocumentTitle',

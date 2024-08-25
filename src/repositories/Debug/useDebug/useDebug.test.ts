@@ -1,10 +1,12 @@
 import { describe, expect, test, vi } from 'vitest'
-import { renderHook } from '@testing-library/react'
+import { renderHook } from '@app/configs/test/testing-library/react'
 import { useDebug } from './useDebug'
 
+const mountHook = () => renderHook(() => useDebug())
+
 describe('Should test repositories/debug/useDebug', () => {
-  test('Should execute info function', () => {
-    const { result } = renderHook(() => useDebug())
+  test('Should call info with the "data" object', () => {
+    const { result } = mountHook()
     const infoSpy = vi.spyOn(result.current, 'info')
     const data = { message: 'info message test' }
 
@@ -13,8 +15,8 @@ describe('Should test repositories/debug/useDebug', () => {
     expect(infoSpy).toHaveBeenCalledWith(data)
   })
 
-  test('Should execute warn function', () => {
-    const { result } = renderHook(() => useDebug())
+  test('Should call warn with the "data" object', () => {
+    const { result } = mountHook()
     const warnSpy = vi.spyOn(result.current, 'warn')
     const data = { message: 'warn message test' }
 
@@ -23,8 +25,8 @@ describe('Should test repositories/debug/useDebug', () => {
     expect(warnSpy).toHaveBeenCalledWith(data)
   })
 
-  test('Should execute error function', () => {
-    const { result } = renderHook(() => useDebug())
+  test('Should call error with the "data" object', () => {
+    const { result } = mountHook()
     const errorSpy = vi.spyOn(result.current, 'error')
     const data = { message: 'error message test' }
 

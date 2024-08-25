@@ -1,12 +1,20 @@
-import { HeaderSubtitle, HeaderTitle, HeaderWrapper } from './Header.style'
+import {
+  HeaderSubtitle,
+  HeaderSubtitleWrapper,
+  HeaderTitle,
+  HeaderWrapper,
+} from './Header.style'
 import type { HeaderProps } from './Header.d'
-import { useDebug } from '@app/repositories/debug/useDebug'
-import { useDocumentTitle } from './helpers/useDocumentTitle'
+import { TrucatesSize } from '@app/repositories/Text'
+import { useDebug } from '@app/repositories/Debug/useDebug'
 import { useEffect } from 'react'
+import { usePageTitle } from '@app/repositories/Text/usePageTitle/usePageTitle'
+import { useTruncate } from '@app/repositories/Text/useTruncate/useTruncate'
 
 const Header = ({ title, subtitle }: HeaderProps) => {
   const debug = useDebug()
-  const { changeDocumentTitle } = useDocumentTitle()
+  const { changeDocumentTitle } = usePageTitle()
+  const { trucateTextByLimit } = useTruncate()
 
   useEffect(() => {
     const currentTitle = changeDocumentTitle(title)
@@ -17,8 +25,19 @@ const Header = ({ title, subtitle }: HeaderProps) => {
 
   return (
     <HeaderWrapper>
-      <HeaderTitle>{title}</HeaderTitle>
-      {subtitle && <HeaderSubtitle>{subtitle}</HeaderSubtitle>}
+      <HeaderTitle role="heading-title" aria-label={title}>
+        {title}
+      </HeaderTitle>
+      {subtitle && (
+        <HeaderSubtitleWrapper>
+          <HeaderSubtitle role="heading-subtitle" aria-label={subtitle}>
+            {trucateTextByLimit(
+              subtitle,
+              TrucatesSize.TRUNCATE_TITLE_DESCRIPTION_LIMIT,
+            )}
+          </HeaderSubtitle>
+        </HeaderSubtitleWrapper>
+      )}
     </HeaderWrapper>
   )
 }

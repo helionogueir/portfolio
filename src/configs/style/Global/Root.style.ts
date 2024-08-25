@@ -5,6 +5,7 @@ const DocumentStyles = css`
     font-size: 62.5%; /* 10px */
     font-family: 'Nunito', sans-serif;
     scroll-behavior: smooth;
+    text-align: left;
   }
 `
 

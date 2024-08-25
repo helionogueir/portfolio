@@ -1,3 +1,3 @@
-import Theme from './Theme'
+import { LightMode } from './LightMode'
 
-export default Theme
+export { LightMode }

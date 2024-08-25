@@ -1,6 +1,6 @@
 {
   "environment": "jsdom",
-  "setupFiles": ["./src/configs/test/vitest.setup.ts"],
+  "setupFiles": ["./src/configs/test/vitest/vitest.setup.ts"],
   "coverage": {
     "all": true,
     "ignoreEmptyLines": true,
