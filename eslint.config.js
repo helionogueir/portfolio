@@ -1,8 +1,9 @@
-import {
-  personalRulesConfig,
-  restrictDomainImportsConfig,
-  restrictRepositoriesImportsConfig,
-} from './src/configs/eslint/no-restricted-imports.js'
+import affectAllPackages from './src/configs/eslint-config-personal/all/config.js'
+import affectComponentsPackage from './src/configs/eslint-config-personal/app/components/config.js'
+import affectConfigsPackage from './src/configs/eslint-config-personal/app/configs/config.js'
+import affectDomainPackage from './src/configs/eslint-config-personal/app/domain/config.js'
+import affectPagesPackage from './src/configs/eslint-config-personal/app/pages/config.js'
+import affectRepositoriesPackage from './src/configs/eslint-config-personal/app/repositories/config.js'
 import eslintPluginPrettier from 'eslint-plugin-prettier'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import eslintPluginStorybook from 'eslint-plugin-storybook'
@@ -12,7 +13,6 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
 
-// @TODO: Add must have *.test.ts and organize folder rules
 const defautConfig = tseslint.config(
   { ignores: ['dist'] },
   {
@@ -44,7 +44,10 @@ const defautConfig = tseslint.config(
 
 export default [
   ...defautConfig,
-  ...personalRulesConfig,
-  ...restrictDomainImportsConfig,
-  ...restrictRepositoriesImportsConfig,
+  ...affectAllPackages,
+  ...affectComponentsPackage,
+  ...affectConfigsPackage,
+  ...affectDomainPackage,
+  ...affectPagesPackage,
+  ...affectRepositoriesPackage,
 ]
