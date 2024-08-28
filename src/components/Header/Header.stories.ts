@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import Header from './Header'
-import { loremIpsumGenerator } from '@app/repositories/Text/useTextGenerator'
+import Header from '@app/components/Header'
+import { loremIpsumGenerator } from '@app/application/Text/useTextGenerator'
 
 const meta = {
   title: 'componets/Header',
   component: Header,
   parameters: { layout: 'centered' },
-  tags: ['componets'],
+  tags: ['autodocs'],
   argTypes: {
     title: { control: 'text' },
     subtitle: { control: 'text' },

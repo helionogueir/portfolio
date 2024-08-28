@@ -1,3 +1,0 @@
-# Configs
-
-Application configuration settings.

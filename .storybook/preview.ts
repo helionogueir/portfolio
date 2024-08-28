@@ -1,5 +1,6 @@
-import GlobalStyles from '../src/configs/style/Global'
-import { Light } from '../src/configs/style/Theme/Mode/Light'
+// @TODO: Add alias @app
+import GlobalStyles from '../src/application/Style/Global'
+import { Light } from '../src/application/Style/Theme/Mode'
 import type { Preview } from '@storybook/react'
 import { ThemeProvider } from 'styled-components'
 import { withThemeFromJSXProvider } from '@storybook/addon-themes'

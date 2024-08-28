@@ -1,9 +1,9 @@
-import affectAllPackages from './src/configs/eslint-config-personal/all/config.js'
-import affectComponentsPackage from './src/configs/eslint-config-personal/app/components/config.js'
-import affectConfigsPackage from './src/configs/eslint-config-personal/app/configs/config.js'
-import affectDomainPackage from './src/configs/eslint-config-personal/app/domain/config.js'
-import affectPagesPackage from './src/configs/eslint-config-personal/app/pages/config.js'
-import affectRepositoriesPackage from './src/configs/eslint-config-personal/app/repositories/config.js'
+import affectAllPackages from './.eslint.config/all/config.js'
+import affectAppPackage from './.eslint.config/app/config.js'
+import affectApplicationPackage from './.eslint.config/app/application/config.js'
+import affectComponentsPackage from './.eslint.config/app/components/config.js'
+import affectDomainPackage from './.eslint.config/app/domain/config.js'
+import affectPagesPackage from './.eslint.config/app/pages/config.js'
 import eslintPluginPrettier from 'eslint-plugin-prettier'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import eslintPluginStorybook from 'eslint-plugin-storybook'
@@ -13,8 +13,9 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
 
+// @TODO: force components and application sorce packages have a *.test.tsx, a component package has a *.component.tsx, page package has a *.page.tsx ...
 const defautConfig = tseslint.config(
-  { ignores: ['dist'] },
+  { ignores: ['coverage', 'dist', 'node_modules'] },
   {
     extends: [
       js.configs.recommended,
@@ -45,9 +46,9 @@ const defautConfig = tseslint.config(
 export default [
   ...defautConfig,
   ...affectAllPackages,
+  ...affectAppPackage,
+  ...affectApplicationPackage,
   ...affectComponentsPackage,
-  ...affectConfigsPackage,
   ...affectDomainPackage,
   ...affectPagesPackage,
-  ...affectRepositoriesPackage,
 ]

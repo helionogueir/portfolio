@@ -22,9 +22,7 @@
 
     /* Paths */
     "baseUrl": "./src",
-    "paths": {
-      "@app/*": ["*"]
-    },
+    "paths": { "@app/*": ["*"] },
 
     /* Types */
     "types": ["@testing-library/jest-dom"]

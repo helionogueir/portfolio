@@ -1,9 +1,9 @@
 import Header, { type HeaderProps } from '.'
 import { describe, expect, test } from 'vitest'
-import { render, screen } from '@app/configs/test/testing-library/react'
-import i18next from '@app/repositories/Locale/useTranslation'
+import { render, screen } from '@app/application/Test/testing-library/react'
+import i18next from '@app/application/Locale/useTranslation'
 
-const appTitle = i18next.t('system:app.name')
+const appTitle = i18next.t('config:app.name')
 
 const renderComponent = (props: HeaderProps) => {
   render(<Header {...props} />)
@@ -11,34 +11,28 @@ const renderComponent = (props: HeaderProps) => {
 
 describe('Should test components/Header', () => {
   test('Should render components/Header with "title"', () => {
-    const props: HeaderProps = { title: `${appTitle} | Header Title` }
+    const props: HeaderProps = { title: 'Header Title' }
 
     renderComponent(props)
 
-    const titleComponent = screen.getByRole('heading-title', {
-      name: props.title,
-    })
+    const titleComponent = screen.getByText(`${appTitle} | ${props.title}`)
 
     expect(titleComponent).toBeInTheDocument()
   })
 
   test('Should render components/Header with "title and subtitle"', () => {
     const props: HeaderProps = {
-      title: `${appTitle} | Header Title`,
+      title: 'Header Title',
       subtitle: 'Header Subtitle',
     }
 
     renderComponent(props)
 
-    const titleComponent = screen.getByRole('heading-title', {
-      name: props.title,
-    })
+    const titleComponent = screen.getByText(`${appTitle} | ${props.title}`)
 
     expect(titleComponent).toBeInTheDocument()
 
-    const subTitleComponent = screen.getByRole('heading-subtitle', {
-      name: props.subtitle,
-    })
+    const subTitleComponent = screen.getByText(props.subtitle || '')
 
     expect(subTitleComponent).toBeInTheDocument()
   })
@@ -48,9 +42,7 @@ describe('Should test components/Header', () => {
 
     renderComponent(props)
 
-    const titleComponent = screen.getByRole('heading-title', {
-      name: props.title,
-    })
+    const titleComponent = screen.getByText(props.title)
 
     expect(titleComponent).toBeInTheDocument()
   })
@@ -60,9 +52,7 @@ describe('Should test components/Header', () => {
 
     renderComponent(props)
 
-    const titleComponent = screen.getByRole('heading-title', {
-      name: props.title,
-    })
+    const titleComponent = screen.getByText(appTitle)
 
     expect(titleComponent).toBeInTheDocument()
   })

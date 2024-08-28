@@ -1,6 +1,6 @@
 import LanguageDetector from 'i18next-browser-languagedetector'
-import debug from '../console/useConsole'
-import en from './en'
+import debug from '@app/domain/Console/useConsole'
+import en from '@app/domain/Locales/en'
 import i18next from 'i18next'
 
 i18next.use(LanguageDetector).init(
@@ -11,7 +11,7 @@ i18next.use(LanguageDetector).init(
     resources: { en },
     interpolation: { escapeValue: false },
     defaultNS: 'system',
-    ns: ['common', 'home', 'system'],
+    ns: ['common', 'config', 'home'],
   },
   (err) =>
     err

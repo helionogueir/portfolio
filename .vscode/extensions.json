@@ -5,6 +5,7 @@
     "esbenp.prettier-vscode",
     "redhat.vscode-yaml",
     "styled-components.vscode-styled-components",
-    "unifiedjs.vscode-mdx"
+    "unifiedjs.vscode-mdx",
+    "formulahendry.auto-rename-tag"
   ]
 }

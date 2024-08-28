@@ -1,0 +1,24 @@
+{
+  "environment": "jsdom",
+  "setupFiles": ["./.vitest/vitest.setup.ts"],
+  "coverage": {
+    "all": true,
+    "ignoreEmptyLines": true,
+    "reportsDirectory": "../coverage",
+    "reporter": ["text", "json", "html"],
+    "thresholds": {
+      "statements": 100,
+      "functions": 100,
+      "branches": 100,
+      "lines": 100
+    },
+    "include": ["{components,application}/**/*.{js,jsx,ts,tsx}"],
+    "exclude": [
+      "**/*.d.ts",
+      "**/*.stories.{js,jsx,ts,tsx}",
+      "**/*.style.{ts,tsx}",
+      "**/*.test.{js,jsx,ts,tsx}",
+      "**/index.ts"
+    ]
+  }
+}

@@ -1,5 +1,5 @@
-import Header from './Header'
+import { Header } from '@app/components/Header/Header.component'
 
-export type { HeaderProps } from './Header.d'
+export type * from '@app/components/Header/Header.d'
 
 export default Header

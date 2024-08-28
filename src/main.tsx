@@ -1,7 +1,7 @@
 import Home from '@app/pages/Home'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import StyledComponentsProvider from './configs/style/styled-components/StyledComponentsProvider'
+import { StyledComponentsProvider } from '@app/application/Style/styled-components'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
