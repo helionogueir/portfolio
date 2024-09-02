@@ -4,6 +4,7 @@
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "formulahendry.auto-rename-tag",
+    "ms-azuretools.vscode-docker",
     "pflannery.vscode-versionlens",
     "redhat.vscode-yaml",
     "styled-components.vscode-styled-components",

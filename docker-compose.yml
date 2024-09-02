@@ -1,0 +1,40 @@
+services:
+  base: &BASE
+    image: node:20
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+
+  install:
+    <<: *BASE
+    command: /bin/bash ./.scripts/install.sh
+
+  lint:
+    <<: *BASE
+    command: /bin/bash ./.scripts/lint.sh
+    depends_on:
+      - install
+
+  format:
+    <<: *BASE
+    command: /bin/bash ./.scripts/format.sh
+    depends_on:
+      - install
+
+  tests:
+    <<: *BASE
+    command: /bin/bash ./.scripts/tests.sh
+    depends_on:
+      - install
+
+  tests-coverage:
+    <<: *BASE
+    command: /bin/bash ./.scripts/tests-coverage.sh
+    depends_on:
+      - install
+
+  build:
+    <<: *BASE
+    command: /bin/bash ./.scripts/build.sh
+    depends_on:
+      - install

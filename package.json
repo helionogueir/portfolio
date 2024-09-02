@@ -11,9 +11,9 @@
     "lint:fix": "yarn lint --fix",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "test:coverage": "yarn test --coverage",
+    "tests": "vitest run",
+    "tests:watch": "vitest",
+    "tests:coverage": "yarn tests --coverage",
     "storybook": "storybook dev -p 6006 --no-open",
     "storybook:build": "storybook build"
   },
