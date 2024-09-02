@@ -9,7 +9,7 @@ export const usePageTitle: PageTitleHookProps = () => {
   const { t } = useTranslation()
 
   const changeDocumentTitle: ChangeDocumentTitleProps = (title) => {
-    const appTitle = t('config:app.name')
+    const appTitle = t('configs:app.name')
 
     if (isEmpty(title)) return appTitle
     const currentTitle = title === appTitle ? title : `${appTitle} | ${title}`

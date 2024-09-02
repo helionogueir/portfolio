@@ -11,7 +11,7 @@ i18next.use(LanguageDetector).init(
     resources: { en },
     interpolation: { escapeValue: false },
     defaultNS: 'system',
-    ns: ['common', 'config', 'home'],
+    ns: ['common', 'configs', 'documentation', 'home'],
   },
   (err) =>
     err

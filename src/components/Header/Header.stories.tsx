@@ -6,19 +6,32 @@ const meta = {
   title: 'componets/Header',
   component: Header,
   parameters: { layout: 'centered' },
-  tags: ['autodocs'],
-  argTypes: {
-    title: { control: 'text' },
-    subtitle: { control: 'text' },
-  },
 } satisfies Meta<typeof Header>
 
 export default meta
+
 type Story = StoryObj<typeof meta>
 
-export const Standard: Story = {
+export const HeaderWithTitleAndSubtitle: Story = {
+  name: 'Header with "Title" and "Subtitle"',
   args: {
     title: 'Header Title Example',
     subtitle: loremIpsumGenerator(1024),
+  },
+}
+
+export const HeaderWithoutSubtitle: Story = {
+  name: 'Header without "Subtitle"',
+  args: {
+    title: 'Header Title Example',
+    subtitle: '',
+  },
+}
+
+export const HeaderWithEmptyTitle: Story = {
+  name: 'Header with empty "Title"',
+  args: {
+    title: '',
+    subtitle: '',
   },
 }

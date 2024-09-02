@@ -1,11 +1,12 @@
 {
   "recommendations": [
+    "aaron-bond.better-comments",
     "dbaeumer.vscode-eslint",
-    "ecmel.vscode-html-css",
     "esbenp.prettier-vscode",
+    "formulahendry.auto-rename-tag",
+    "pflannery.vscode-versionlens",
     "redhat.vscode-yaml",
     "styled-components.vscode-styled-components",
-    "unifiedjs.vscode-mdx",
-    "formulahendry.auto-rename-tag"
+    "unifiedjs.vscode-mdx"
   ]
 }

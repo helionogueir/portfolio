@@ -12,6 +12,7 @@ import js from '@eslint/js'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
+import unusedImports from 'eslint-plugin-unused-imports'
 
 // @TODO: force components and application sorce packages have a *.test.tsx, a component package has a *.component.tsx, page package has a *.page.tsx ...
 const defautConfig = tseslint.config(
@@ -30,6 +31,7 @@ const defautConfig = tseslint.config(
     plugins: {
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
+      'unused-imports': unusedImports,
       storybook: eslintPluginStorybook,
       prettier: eslintPluginPrettier,
     },

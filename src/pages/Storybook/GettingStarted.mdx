@@ -1,0 +1,22 @@
+import { Meta } from '@storybook/blocks'
+import i18next from '@app/application/Locale/useTranslation'
+
+<Meta title="Getting Started" />
+
+# {i18next.t('documentation:storybook.title')}
+
+{i18next.t('documentation:storybook.greetings', {applicationName: i18next.t('configs:app.name')})}
+
+<style>
+  {`
+  :root {
+    font-size: 62.5%; /* 10px */
+    font-family: 'Nunito', sans-serif;
+  }
+
+  * {
+    font-size: 1.6rem;
+    color: #333;
+  }
+  `}
+</style>

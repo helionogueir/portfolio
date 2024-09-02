@@ -20,6 +20,9 @@ const config = [
       '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/no-for-in-array': 'error',
       'no-unneeded-ternary': 2,
+      'no-unused-vars': 'error',
+      '@typescript-eslint/no-unused-vars': 'error',
+      'unused-imports/no-unused-imports': 'error',
       '@typescript-eslint/naming-convention': [
         'error',
         {

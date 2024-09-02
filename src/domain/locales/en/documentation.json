@@ -1,0 +1,6 @@
+{
+  "storybook": {
+    "title": "Getting Started",
+    "greetings": "In the topics below, you can hunt up, use, and discover how to use all {{applicationName}} application components. Enjoy your time here, and if you have any suggestions, please feel free to open a PR."
+  }
+}

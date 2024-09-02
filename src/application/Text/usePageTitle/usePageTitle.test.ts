@@ -3,7 +3,7 @@ import i18next from '@app/application/Locale/useTranslation'
 import { renderHook } from '@app/application/Test/testing-library/react'
 import { usePageTitle } from '@app/application/Text/usePageTitle'
 
-const appTitle = i18next.t('config:app.name')
+const appTitle = i18next.t('configs:app.name')
 
 const mountHook = () => renderHook(() => usePageTitle())
 

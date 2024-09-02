@@ -3,7 +3,7 @@ import { describe, expect, test } from 'vitest'
 import { render, screen } from '@app/application/Test/testing-library/react'
 import i18next from '@app/application/Locale/useTranslation'
 
-const appTitle = i18next.t('config:app.name')
+const appTitle = i18next.t('configs:app.name')
 
 const renderComponent = (props: HeaderProps) => {
   render(<Header {...props} />)
@@ -15,7 +15,9 @@ describe('Should test components/Header', () => {
 
     renderComponent(props)
 
-    const titleComponent = screen.getByText(`${appTitle} | ${props.title}`)
+    const titleComponent = screen.getByRole('heading', {
+      name: `${appTitle} | ${props.title}`,
+    })
 
     expect(titleComponent).toBeInTheDocument()
   })
@@ -28,7 +30,9 @@ describe('Should test components/Header', () => {
 
     renderComponent(props)
 
-    const titleComponent = screen.getByText(`${appTitle} | ${props.title}`)
+    const titleComponent = screen.getByRole('heading', {
+      name: `${appTitle} | ${props.title}`,
+    })
 
     expect(titleComponent).toBeInTheDocument()
 
@@ -42,7 +46,9 @@ describe('Should test components/Header', () => {
 
     renderComponent(props)
 
-    const titleComponent = screen.getByText(props.title)
+    const titleComponent = screen.getByRole('heading', {
+      name: props.title,
+    })
 
     expect(titleComponent).toBeInTheDocument()
   })
@@ -52,7 +58,9 @@ describe('Should test components/Header', () => {
 
     renderComponent(props)
 
-    const titleComponent = screen.getByText(appTitle)
+    const titleComponent = screen.getByRole('heading', {
+      name: appTitle,
+    })
 
     expect(titleComponent).toBeInTheDocument()
   })

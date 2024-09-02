@@ -8,7 +8,7 @@ describe('Should test application/Locale/useTranslation', () => {
   test('Should return "translation", after call t', () => {
     const { result } = mountHook()
     const tSpy = vi.spyOn(result.current, 't')
-    const translation = 'config:app.name'
+    const translation = 'configs:app.name'
     const value = result.current.t(translation)
 
     expect(tSpy).toHaveBeenCalledTimes(1)
